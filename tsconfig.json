@@ -8,6 +8,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "lib-sconsole-ui-shared": [
+        "./dist/lib-sconsole-ui-shared"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

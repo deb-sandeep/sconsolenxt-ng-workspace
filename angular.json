@@ -3,5 +3,214 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "app-remote": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/app-remote",
+      "sourceRoot": "projects/app-remote/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/app-remote",
+            "index": "projects/app-remote/src/index.html",
+            "browser": "projects/app-remote/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/app-remote/tsconfig.app.json",
+            "assets": [
+              "projects/app-remote/src/favicon.ico",
+              "projects/app-remote/src/assets"
+            ],
+            "styles": [
+              "projects/app-remote/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "remote:build:production"
+            },
+            "development": {
+              "buildTarget": "remote:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "remote:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/app-remote/tsconfig.spec.json",
+            "assets": [
+              "projects/app-remote/src/favicon.ico",
+              "projects/app-remote/src/assets"
+            ],
+            "styles": [
+              "projects/app-remote/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "app-admin": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/app-admin",
+      "sourceRoot": "projects/app-admin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/app-admin",
+            "index": "projects/app-admin/src/index.html",
+            "browser": "projects/app-admin/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/app-admin/tsconfig.app.json",
+            "assets": [
+              "projects/app-admin/src/favicon.ico",
+              "projects/app-admin/src/assets"
+            ],
+            "styles": [
+              "projects/app-admin/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "admin:build:production"
+            },
+            "development": {
+              "buildTarget": "admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/app-admin/tsconfig.spec.json",
+            "assets": [
+              "projects/app-admin/src/favicon.ico",
+              "projects/app-admin/src/assets"
+            ],
+            "styles": [
+              "projects/app-admin/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "lib-ui-shared": {
+      "projectType": "library",
+      "root": "projects/lib-ui-shared",
+      "sourceRoot": "projects/lib-ui-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-ui-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-ui-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-ui-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/lib-ui-shared/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }
