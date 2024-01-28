@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'remote' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('remote');
+    expect(app.title).toEqual('app-remote');
   });
 
   it('should render title', () => {

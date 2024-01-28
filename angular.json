@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "remote:build:production"
+              "buildTarget": "app-remote:build:production"
             },
             "development": {
-              "buildTarget": "remote:build:development"
+              "buildTarget": "app-remote:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "remote:build"
+            "buildTarget": "app-remote:build"
           }
         },
         "test": {
@@ -145,10 +145,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "admin:build:production"
+              "buildTarget": "app-admin:build:production"
             },
             "development": {
-              "buildTarget": "admin:build:development"
+              "buildTarget": "app-admin:build:development"
             }
           },
           "defaultConfiguration": "development"
