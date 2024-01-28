@@ -9,8 +9,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "lib-sconsole-ui-shared": [
-        "./dist/lib-sconsole-ui-shared"
+      "lib-ui-shared": [
+        "./dist/lib-ui-shared"
       ]
     },
     "noFallthroughCasesInSwitch": true,
